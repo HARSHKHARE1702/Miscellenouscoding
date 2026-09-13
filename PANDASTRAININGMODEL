@@ -1,0 +1,99 @@
+import numpy as np 
+a = np.array
+
+matrix = np.array
+
+import pandas as pd
+df = pd.DataFrame(data)
+
+df[
+    (df["Salary"]>60000) & (df["Age"]>25)
+]
+df.drop("Bonus",axis=1,inplace=True)
+df.groupby("Department")["Salary"].mean()
+
+df.groupby("Department")["Salary"].agg
+
+df =  pd.read_csv("employees.csv")
+df = pd.read_excel("employees.xlsx")
+
+df = pd.read_json("employees.json")
+
+df.head()
+df.tail()
+df.info()
+df.describe()
+df.shape
+
+df.groupby("Department")["Salary"].agg
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("customers.csv")
+
+df["balance"] = df["balance"].fillna
+df["balance"].mean()
+)
+
+df["balance_log"]=np.log1p(
+    df["balance"]
+)
+df.dropna()
+df.isnull()
+
+df.loc[0,"Name"]
+df.loc[df["Salary"]>6000,]
+
+import pandas as pd
+import numpy as np
+
+df= pd.DataFrame({
+   "Customer_ID":[101,102,103,104,105],
+    "Age":[25,35,np.nan,42,42],
+    "Income":[50000,75000,60000,np.nan,np.nan],
+    "City":["Mumbai","Delhi","Pune"],
+    "Loan_Status":["Aprroved","Rejected"],
+
+})
+df.head()
+df.shape
+df.describe()
+df.isnull()
+
+df = pd.read_csv("customers.csv")
+
+#1.Inspect
+print(df.shape)
+print(df.info())
+
+#2.Remove duplicates
+df = df.drop_duplicates()
+
+#3. Clean strings
+df["City"]=df["City"].str.strip().str.lower()
+
+#4. Convert numeric column
+df["Income"]=pd.to_numeric(
+    df["Income"],
+    errors="coerce"
+)
+
+#5 Missing values
+df["Income"]=df["Income"].fillna(
+    df["Income"].median()
+)
+
+#6 Validate age
+df.loc[
+    (df["Age"]<18)|(df["Age"]>100)
+    "Age"
+]= np.nan 
+
+#7. Fill age
+df["Age"] = df["Age"].fillna(
+    df["Age"].median()
+)
+
+#Reset index
+df = df.reset_index(drop=True)
