@@ -1,0 +1,33 @@
+def answer_question(question,customer_id):
+
+#convert question into embedding
+query_embedding = embed(question)
+
+#sementic Retrieval
+documents = vector_db.search(
+query_embedding,
+top-k=5
+)
+
+#Retrieve Relationship
+customer context = graph_db.get_customer_context(
+customer_id
+)
+
+#Build Prompt
+prompt = build_prompt(
+question = question,
+documents = documents,
+customer_context = customer_context,
+)
+#Generate Answer
+response = llm.generate(
+prompt,
+temperature=0.2,
+max_token=500,
+)
+return response
+
+
+
+
