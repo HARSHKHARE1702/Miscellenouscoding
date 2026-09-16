@@ -1,0 +1,11 @@
+documents = [
+
+]
+embeddings = embedding_model.emebed_documents(documents)
+query = "What is the Transaction limits"
+
+query_emebeddings = embedding_model.embed_query(query)
+results = vector_db.similarity_search(
+query emebedding,
+k=2
+)
