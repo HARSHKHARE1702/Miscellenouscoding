@@ -26,6 +26,11 @@ prompt,
 temperature=0.2,
 max_token=500,
 )
+#Prompting
+prompt.format(
+context = policey text
+question = user question
+)
 return response
 
 
